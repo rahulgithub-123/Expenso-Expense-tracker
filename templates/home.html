@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Budget Tracker</title>
+
+    <link rel="icon" href="static/bizum_payment_method_logo_icon_263125.ico" >
+
+
+    <!-- Font Awesome for icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+    <!-- Google Fonts for styling -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&family=Pacifico&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="static/home.css">
+
+
+</head>
+<body>
+<!--     <div class="loader" id="loader"></div> -->
+
+    <div class="container">
+        <div class="content">
+            <h1>Welcome to Budget Tracker</h1>
+            <p>Your personal finance management tool.</p>
+
+            <div class="buttons">
+                <a href="{{ url_for('viewbudget') }}" class="btn">View Budget</a>
+                <a href="{{ url_for('dashboard') }}" class="btn">Go to Expenses Dashboard</a>
+                <a href="{{ url_for('login') }}" class="btn">Logout</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

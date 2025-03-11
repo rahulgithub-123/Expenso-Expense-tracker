@@ -1,0 +1,88 @@
+   <!DOCTYPE html>
+   <html lang="en">
+   <head>
+       <meta charset="UTF-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <title>Dashboard - Expense Tracker</title>
+       <link rel="icon" href="static/bizum_payment_method_logo_icon_263125.ico" >
+
+       
+       <!-- Add FontAwesome for the filter icon -->
+       <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+   
+       <!-- Link to Google Fonts for a stylish font -->
+       <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&family=Pacifico&display=swap" rel="stylesheet">
+       
+       <link rel="stylesheet" href="static/dashboard.css">
+   </head>
+   
+   <body>
+       
+       <div class="dashboard-container">
+        <h1>Expenso - Expense Tracker</h1>
+           <h2>Your Expenses</h2>
+   
+           <!-- Filter Form -->
+           <form method="GET" action="{{ url_for('dashboard') }}">
+               <label for="amount_filter">Filter by Amount</label>
+               <select name="amount_filter" id="amount_filter">
+                   <option value="">All</option>
+                   <option value="under_100" {% if amount_filter == 'under_100' %} selected {% endif %}>Under ₹100</option>
+                   <option value="under_200" {% if amount_filter == 'under_200' %} selected {% endif %}>Under ₹200</option>
+                   <option value="under_300" {% if amount_filter == 'under_300' %} selected {% endif %}>Under ₹300</option>
+                   <option value="under_400" {% if amount_filter == 'under_400' %} selected {% endif %}>Under ₹400</option>
+                   <option value="under_500" {% if amount_filter == 'under_500' %} selected {% endif %}>Under ₹500</option>
+                   <option value="under_1000" {% if amount_filter == 'under_1000' %} selected {% endif %}>Under ₹1000</option>
+                   <option value="under_2000" {% if amount_filter == 'under_2000' %} selected {% endif %}>Under ₹2000</option>
+                   <option value="under_5000" {% if amount_filter == 'under_5000' %} selected {% endif %}>Under ₹5000</option>
+               </select>
+   
+               <label for="date_filter">Date:</label>
+               <input type="date" id="date_filter" name="date_filter" value="{{ request.args.get('date_filter', '') }}">
+   
+               <!-- Filter button with icon -->
+               <button type="submit">
+                   <i class="fas fa-filter"></i> Apply Filter
+               </button>
+           </form>
+   
+           <!-- Expense Table -->
+           {% if expenses %}
+           <table>
+               <thead>
+                   <tr>
+                       <th>Amount</th>
+                       <th>Category</th>
+                       <th>Transaction Time</th>
+                       <th>Description</th>
+                   </tr>
+               </thead>
+               <tbody>
+                   {% for expense in expenses %}
+                   <tr>
+                       <td>₹{{ expense.amount}}</td>
+                       <td>{{ expense.category}}</td>
+                       <td>{{ expense.createdAt}}</td>
+                       <td>{{ expense.description}}</td>
+                   </tr>
+                   {% endfor %}
+               </tbody>
+           </table>
+           {% else %}
+           <p>No expenses to show.</p>
+           {% endif %}
+   
+           <div class="actions">
+               <a href="{{ url_for('add_expense') }}" class="btn">Add Expense</a>
+               <a href="{{ url_for('logout') }}" class="btn">Logout</a>
+               <a href="{{ url_for('viewbudget') }}" class="btn">View Budget</a>
+           </div>
+       </div>
+   </body>
+   </html>
+   
+   
+   
+   
+   
+   

@@ -1,0 +1,115 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #302b63; /* Light background */
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+}
+
+form {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    text-align: left;
+}
+
+h2 {
+    text-align: center;
+    color: #6a1b9a; /* Purple for the header */
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+label {
+    display: block;
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    color: #6a1b9a;
+}
+
+input, select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1em;
+}
+
+input:focus, select:focus {
+    border-color: #6a1b9a; /* Purple border on focus */
+    outline: none;
+}
+
+button {
+    background-color: #000000; 
+    color: white;
+    padding: 12px 20px;
+    font-size: 1.1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+
+/* Actions Section */
+.actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px; /* Adds space between the buttons */
+    margin-top: 30px;
+}
+
+.actions .btn {
+    background-color: #000000;
+    color: white;
+    padding: 12px 20px;
+    font-size: 1.1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none; 
+    width: 48%; 
+    text-align: center; 
+    display: inline-block; 
+    transition: background-color 0.3s ease;
+}
+
+/* Hover effect */
+.actions .btn:hover {
+    background-color: #302b63; /* Changes background color on hover */
+}
+
+/* Add specific styles for individual buttons if needed */
+.actions .btn.view-budget {
+    background-color: #302b63;
+}
+
+.actions .btn.view-budget:hover {
+    background-color: #4a148c;
+}
+
+.actions .btn.add-expense {
+    background-color: #e23a3a;
+}
+
+.actions .btn.add-expense:hover {
+    background-color: #c9302c;
+}
+
+
+center {
+    margin-top: 20px;
+}

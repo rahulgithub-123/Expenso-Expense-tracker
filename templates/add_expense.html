@@ -1,0 +1,47 @@
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Expense</title>
+    <link rel="stylesheet" href="static\expense.css">
+</head>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Add Expense</title>
+<link rel="icon" href="static/bizum_payment_method_logo_icon_263125.ico" >
+
+
+</head>
+<body>
+    <form method="POST">
+        <label for="amount">Amount:</label>
+        <input type="text" id="amount" name="amount" required>
+
+        <label for="category">Category:</label>
+        <select id="category" name="category" required>
+            <option value="Food">Food</option>
+            <option value="Travel">Travel</option>
+            <option value="Entertainment">Entertainment</option>
+            <option value="Utilities">Utilities</option>
+            <option value="Others">Others</option>
+        </select>
+
+        <label for="description">Description:</label>
+        <select id="description" name="Description" required>
+            <option value="UPI">UPI</option>
+            <option value="CASH">CASH</option>
+            <option value="Net Banking">Net Banking</option>
+            <option value="CARD">CARD</option>
+        </select><br>
+        <button type="submit">Add Expense</button><br><br>
+       <a href="{{ url_for('dashboard') }}">
+            <button type="button">Go to Dashboard</button>
+        </a>
+
+    </form>
+    
+</body>
+</html>

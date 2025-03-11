@@ -1,0 +1,245 @@
+/* Reset and Base Styles */
+
+/* HTML: <div class="loader"></div> */
+.loader {
+    width: 120px;
+    height: 22px;
+    border-radius: 40px;
+    color: #514b82;
+    border: 2px solid;
+    position: relative;
+    overflow: hidden;
+  }
+  .loader::before {
+    content: "";
+    position: absolute;
+    margin: 2px;
+    width: 14px;
+    top: 0;
+    bottom: 0;
+    left: -20px;
+    border-radius: inherit;
+    background: currentColor;
+    box-shadow: -10px 0 12px 3px currentColor;
+    clip-path: polygon(0 5%, 100% 0,100% 100%,0 95%,-30px 50%);
+    animation: l14 1s infinite linear;
+  }
+  @keyframes l14 {
+    100% {left: calc(100% + 20px)}
+  }
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #302b63; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    color: #fff;
+}
+
+/* Dashboard Container */
+.dashboard-container {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 800px;
+    text-align: center;
+}
+
+h1 {
+    font-family: "Big Shoulders Stencil", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+    color: #302b63;
+    font-size: 2.5em;
+    margin-bottom: 5px;
+}
+
+form {
+    margin-bottom: 0px;
+}
+
+label {
+    font-size: 1.2em;
+    color: #000000;
+    margin-bottom: 10px;
+    display: block;
+}
+
+h2 {
+    color: #000000;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+label {
+    font-size: 1.2em;
+    color: #000000;
+    margin-bottom: 10px;
+    display: block;
+}
+
+/* Dropdown & Button Styling */
+select {
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f7f7f7;
+    width: 200px;
+    margin-right: 10px;
+}
+
+button {
+    background-color: #302b63;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #4a148c;
+}
+
+/* Expense Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+table th, table td {
+    padding: 15px;
+    text-align: left;
+    border: 1px solid #ddd;
+    font-size: 1em;
+}
+
+table th {
+    background-color: #302b63;
+    color: white;
+}
+
+table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+table tr:hover {
+    background-color: #f1f1f1;
+}
+
+table td {
+    color: #333;
+}
+
+/* Actions Section */
+.actions {
+    margin-top: 30px;
+}
+
+.actions .btn {
+    background-color: #000000;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.2em;
+    transition: background-color 0.3s ease;
+    margin: 10px;
+}
+
+.actions .btn:hover {
+    background-color: #302b63;
+}
+
+.actions .btn.logout-btn {
+    background-color: #d9534f;
+}
+
+.actions .btn.logout-btn:hover {
+    background-color: #c9302c;
+}
+
+/* No Expenses Message */
+p {
+    font-size: 1.2em;
+    color: #888;
+}
+
+/* Style the entire filter section */
+.dashboard-container form {
+    display: flex;
+    align-items: center; /* Align the items vertically in the center */
+    gap: 15px; /* Add spacing between form elements */
+    margin-bottom: 15px; /* Space below the form */
+}
+
+/* Style the filter label */
+.dashboard-container form label {
+    font-size: 14px;
+    color: #444; /* Dark gray color for the label */
+}
+
+/* Style the select dropdown */
+.dashboard-container form select, 
+.dashboard-container form input[type="date"] {
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 4px;
+    width: 150px; /* Set a fixed width for consistency */
+}
+
+/* Style the Apply Filter button */
+.dashboard-container form button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #302b63;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.dashboard-container form button i {
+    margin-right: 8px; /* Space between icon and text */
+}
+
+/* Make the form responsive on smaller screens */
+@media (max-width: 768px) {
+    .dashboard-container form {
+        flex-direction: column; /* Stack the form elements vertically */
+        align-items: flex-start;
+    }
+
+    .dashboard-container form button {
+        width: 100%; /* Make the button take full width on small screens */
+    }
+
+    .dashboard-container form select,
+    .dashboard-container form input[type="date"] {
+        width: 100%; /* Make the inputs take full width on small screens */
+    }
+}
